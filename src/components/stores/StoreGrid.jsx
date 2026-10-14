@@ -23,13 +23,12 @@ export default function StoreGrid({ selectedCity = 'Alla orter', onCityChange, c
       {!filteredStores.length && <p className="store-search-empty">Inga butiker hittades. Prova en annan sökning eller välj en annan ort.</p>}
       <div id={showMap ? 'butikslista' : undefined} className={`store-grid${compact ? ' store-grid-compact' : ''}`}>
         {filteredStores.map((store, index) => (
-          <a className={`store-card${showMap ? '' : ' reveal'}`} key={store.slug} href={storePath(store)} target="_blank" rel="noreferrer">
+          <a className={`store-card${showMap ? '' : ' reveal'}`} key={store.slug} href={storePath(store)}>
             <span className="store-card-number">{String(index + 1).padStart(2, '0')}</span>
             <span className="store-card-city">{store.city}</span>
             <h3>{store.name}</h3>
             <p>{store.address}</p>
             <span className="store-card-link">Upptäck butiken <span aria-hidden="true">↗</span></span>
-            <span className="sr-only">Öppnas i ny flik.</span>
           </a>
         ))}
       </div>
