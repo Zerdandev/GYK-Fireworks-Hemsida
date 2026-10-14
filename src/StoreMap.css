@@ -32,7 +32,8 @@
 .store-map .store-map-popup p { margin: 0; color: rgba(255,255,255,.75); font-size: 12px; line-height: 1.6; }
 .store-map .store-map-popup .store-map-approximate { margin-top: 9px; font-size: 10px; }
 .store-map .store-map-popup-links { display: flex; flex-wrap: wrap; gap: 12px 22px; margin-top: 18px; }
-.store-map .store-map-popup-links a { padding-block: 8px; color: var(--gold-light); font-size: 12px; font-weight: 700; text-decoration: none; }
+.store-map .store-map-popup-links a { display: inline-flex; align-items: center; gap: 5px; padding-block: 8px; color: var(--gold-light); font-size: 12px; font-weight: 700; text-decoration: none; }
+.store-map .store-map-popup-links svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .store-map .store-map-popup-links a:hover { text-decoration: underline; }
 .store-map-help { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 14px 0 0; color: var(--gold-light); font-size: 11px; }
 .store-map-help > span:last-child { margin-left: auto; color: rgba(255,255,255,.6); }

@@ -1,5 +1,5 @@
 import { EVENT_IMAGES } from '../../data/siteContent'
-import { SectionEyebrow } from '../ui/SitePrimitives'
+import { ArrowIcon, SectionEyebrow } from '../ui/SitePrimitives'
 
 export default function AboutSection({ showLink = true, detailed = false }) {
   return (
@@ -20,7 +20,7 @@ export default function AboutSection({ showLink = true, detailed = false }) {
             <p>Planerar du ett firande? Kontakta oss och berätta vad du har i åtanke.</p>
           </>
         )}
-        {showLink && <a className="text-link" href="/om-gyk">Lär känna GYK <span aria-hidden="true">↗</span></a>}
+        {showLink && <a className="text-link" href="/om-gyk">Lär känna GYK <span aria-hidden="true"><ArrowIcon /></span></a>}
       </div>
     </section>
   )

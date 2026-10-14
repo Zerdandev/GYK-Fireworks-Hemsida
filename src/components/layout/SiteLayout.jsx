@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import gykLogo from '../../assets/gyk-logo-transparent.png'
 import vulcanLogo from '../../assets/vulcan-logo-white.png'
 import { VULCAN_URL } from '../../data/siteContent'
+import { ArrowIcon } from '../ui/SitePrimitives'
 
 const navItems = [
   { label: 'Hem', href: '/' },
@@ -85,7 +86,7 @@ export function Footer() {
           <a className="partner-logo-link" href={VULCAN_URL} target="_blank" rel="noreferrer" aria-label="Besök Vulcan Europe">
             <img className="partner-logo" src={vulcanLogo} alt="Vulcan" />
           </a>
-          <a className="footer-external" href={VULCAN_URL} target="_blank" rel="noreferrer">Besök Vulcan Europe <span aria-hidden="true">↗</span></a>
+          <a className="footer-external" href={VULCAN_URL} target="_blank" rel="noreferrer">Besök Vulcan Europe <span aria-hidden="true"><ArrowIcon /></span></a>
         </div>
       </div>
       <div className="footer-bottom wrap">

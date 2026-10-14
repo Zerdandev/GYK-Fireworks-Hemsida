@@ -33,14 +33,25 @@ function popupFor(store) {
   }
   const links = document.createElement('div')
   links.className = 'store-map-popup-links'
+  const createArrow = (direction) => {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+    svg.setAttribute('viewBox', '0 0 24 24')
+    svg.setAttribute('aria-hidden', 'true')
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
+    path.setAttribute('d', direction === 'right' ? 'M5 12h14m-7-7 7 7-7 7' : 'M5 19 19 5M8 5h11v11')
+    svg.append(path)
+    return svg
+  }
   const details = document.createElement('a')
   details.href = storePath(store)
-  details.textContent = 'Se butiken →'
+  details.textContent = 'Se butiken'
+  details.append(createArrow('right'))
   const directions = document.createElement('a')
   directions.href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${store.address}, ${store.city}, Sverige`)}`
   directions.target = '_blank'
   directions.rel = 'noreferrer'
-  directions.textContent = 'Hitta hit ↗'
+  directions.textContent = 'Hitta hit'
+  directions.append(createArrow('northeast'))
   directions.setAttribute('aria-label', `Vägbeskrivning till ${store.name} (öppnas i ny flik)`)
   links.append(details, directions)
   content.append(links)

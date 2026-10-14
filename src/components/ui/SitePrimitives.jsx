@@ -1,7 +1,21 @@
+export function ArrowIcon({ direction = 'northeast' }) {
+  const path = direction === 'left'
+    ? 'M19 12H5m7 7-7-7 7-7'
+    : direction === 'right'
+      ? 'M5 12h14m-7-7 7 7-7 7'
+      : 'M5 19 19 5M8 5h11v11'
+
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+      <path d={path} stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
 export function ButtonLink({ href, children, variant = 'light', external = false }) {
   return (
     <a className={`button button-${variant}`} href={href} {...(external ? { target: '_blank', rel: 'noreferrer' } : {})}>
-      {children}{external && <span className="external-mark" aria-label="Öppnas i ny flik">↗</span>}
+      {children}{external && <span className="external-mark" aria-label="Öppnas i ny flik"><ArrowIcon /></span>}
     </a>
   )
 }

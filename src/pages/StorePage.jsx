@@ -1,5 +1,5 @@
 import { STORE_HERO_IMAGE, VULCAN_URL } from '../data/siteContent'
-import { Breadcrumbs, ButtonLink, SectionEyebrow } from '../components/ui/SitePrimitives'
+import { ArrowIcon, Breadcrumbs, ButtonLink, SectionEyebrow } from '../components/ui/SitePrimitives'
 
 export default function StorePage({ store }) {
   const mapQuery = `${store.address}, ${store.city}, Sverige`
@@ -27,7 +27,7 @@ export default function StorePage({ store }) {
         <div className="store-address"><SectionEyebrow>BESÖK OSS</SectionEyebrow><h2>{store.name}</h2><p>{store.address}<br />{store.city}</p><div className="hours-card"><span className="hours-label">Öppettider</span><ul className="hours-list">{holidayOpeningHours.map(({ date, hours }) => (<li key={date}><span>{date}</span><strong>{hours}</strong></li>))}</ul></div><ButtonLink href={mapUrl} variant="navy" external>Hitta hit</ButtonLink></div>
         <div className="store-order"><SectionEyebrow>SORTIMENT & BESTÄLLNING</SectionEyebrow><h2>Fortsätt till Vulcan</h2><p>Sortiment och beställning hanteras hos Vulcan.</p><ButtonLink href={vulcanUrl} variant="gold" external>Besök Vulcan</ButtonLink></div>
       </section>
-      <section className="store-detail-foot wrap"><p>Har du en fråga om den här försäljningsplatsen?</p><a className="text-link" href="/kontakt?arende=butik">Kontakta GYK <span aria-hidden="true">↗</span></a><a className="back-link" href="/butiker">← Till alla butiker</a></section>
+      <section className="store-detail-foot wrap"><p>Har du en fråga om den här försäljningsplatsen?</p><a className="text-link" href="/kontakt?arende=butik">Kontakta GYK <span aria-hidden="true"><ArrowIcon /></span></a><a className="back-link" href="/butiker"><ArrowIcon direction="left" /> Till alla butiker</a></section>
     </main>
   )
 }

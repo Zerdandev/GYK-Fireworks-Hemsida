@@ -3,7 +3,7 @@ import homeHeroImage from '../assets/Älg vid skogssjö med fyrverkerier.png'
 import AboutSection from '../components/about/AboutSection'
 import { ContactSection } from '../components/contact/ContactForm'
 import StoreGrid from '../components/stores/StoreGrid'
-import { Breadcrumbs, ButtonLink, SectionEyebrow } from '../components/ui/SitePrimitives'
+import { ArrowIcon, Breadcrumbs, ButtonLink, SectionEyebrow } from '../components/ui/SitePrimitives'
 import { EVENT_IMAGES } from '../data/siteContent'
 
 export default function HomePage() {
@@ -53,7 +53,7 @@ export default function HomePage() {
         <div className="wrap">
           <div className="section-heading stores-heading reveal">
             <div><SectionEyebrow>HITTA DIN NÄRMASTE</SectionEyebrow><h2>12 platser. 8 orter.</h2></div>
-            <a className="text-link" href="/butiker">Alla våra butiker <span aria-hidden="true">↗</span></a>
+            <a className="text-link" href="/butiker">Alla våra butiker <span aria-hidden="true"><ArrowIcon /></span></a>
           </div>
           <StoreGrid selectedCity={city} onCityChange={setCity} compact />
         </div>

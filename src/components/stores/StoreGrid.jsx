@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { cities, storePath, stores } from '../../data/stores'
+import { ArrowIcon } from '../ui/SitePrimitives'
 
 const StoreMap = lazy(() => import('../../StoreMap'))
 
@@ -28,7 +29,7 @@ export default function StoreGrid({ selectedCity = 'Alla orter', onCityChange, c
             <span className="store-card-city">{store.city}</span>
             <h3>{store.name}</h3>
             <p>{store.address}</p>
-            <span className="store-card-link">Upptäck butiken <span aria-hidden="true">↗</span></span>
+            <span className="store-card-link">Upptäck butiken <span aria-hidden="true"><ArrowIcon /></span></span>
           </a>
         ))}
       </div>

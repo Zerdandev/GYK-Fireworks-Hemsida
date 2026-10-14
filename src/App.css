@@ -23,7 +23,8 @@
 .button-navy { background: var(--navy); color: var(--white); }
 .button-navy:hover { background: var(--blue); }
 .nav-cta { min-height: 42px; padding-inline: 17px; font-size: 11px; white-space: nowrap; }
-.external-mark { font-size: 17px; line-height: 1; }
+.external-mark { display: inline-flex; align-items: center; line-height: 1; }
+.external-mark svg { width: 16px; height: 16px; }
 .home-hero { position: relative; isolation: isolate; min-height: max(700px, 100svh); overflow: hidden; display: flex; align-items: center; color: var(--white); background: var(--navy); }
 .hero-photo, .events-hero > img, .store-detail-hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .hero-photo { z-index: 0; object-position: center 48%; transform: scaleX(-1); animation: hero-settle 1.2s ease-out both; }
@@ -66,7 +67,8 @@ h1 em, h2 em { color: var(--gold-light); font-style: normal; }
 .stores-heading { display: flex; align-items: end; justify-content: space-between; }
 .stores-heading .section-heading { margin: 0; }
 .text-link { display: inline-flex; gap: 14px; align-items: center; color: var(--ink); font-size: 13px; font-weight: 700; text-decoration: none; }
-.text-link span { color: #93764c; font-size: 17px; transition: transform .2s; }
+.text-link span { display: inline-flex; color: #93764c; transition: transform .2s; }
+.text-link span svg { width: 16px; height: 16px; }
 .text-link:hover span { transform: translate(3px, -3px); }
 .store-toolbar { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
 .filter-label { color: var(--ink-soft); font-size: 12px; font-weight: 650; }
@@ -80,7 +82,8 @@ h1 em, h2 em { color: var(--gold-light); font-style: normal; }
 .store-card h3 { margin: 14px 0 4px; font-size: 20px; font-weight: 650; }
 .store-card > p { margin: 0; color: var(--ink-soft); font-size: 12px; }
 .store-card-link { display: inline-flex; gap: 9px; margin-top: auto; padding-top: 20px; font-size: 11px; font-weight: 750; }
-.store-card-link span { color: #93764c; font-size: 16px; }
+.store-card-link span { display: inline-flex; color: #93764c; }
+.store-card-link span svg { width: 15px; height: 15px; }
 .store-grid-compact { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .store-grid-compact .store-card { min-height: 190px; padding: 21px; }
 .store-grid-compact .store-card-number { top: 21px; right: 21px; }
@@ -120,7 +123,8 @@ h1 em, h2 em { color: var(--gold-light); font-style: normal; }
 .footer-links a:hover, .footer-bottom a:hover { color: var(--gold-light); }
 .footer-links .partner-logo-link { width: min(205px, 100%); display: flex; align-items: center; }
 .partner-logo { display: block; width: 100%; height: auto; max-height: 58px; object-fit: contain; }
-.footer-external span { margin-left: 5px; color: var(--gold-light); }
+.footer-external span { display: inline-flex; margin-left: 5px; color: var(--gold-light); vertical-align: middle; }
+.footer-external span svg { width: 14px; height: 14px; }
 .footer-bottom { min-height: 64px; display: flex; align-items: center; gap: 28px; border-top: 1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.48); font-size: 10px; }
 .footer-bottom a { color: inherit; text-decoration: none; }
 .footer-location { margin-left: auto; }
@@ -164,7 +168,8 @@ h1 em, h2 em { color: var(--gold-light); font-style: normal; }
 .store-order .button { margin-top: 14px; }
 .store-detail-foot { display: flex; gap: 22px; align-items: center; padding-block: 25px; border-top: 1px solid var(--line); }
 .store-detail-foot > p { margin-right: auto; color: var(--ink-soft); font-size: 12px; }
-.store-detail-foot .back-link { color: var(--ink); font-size: 12px; text-decoration: none; }
+.store-detail-foot .back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--ink); font-size: 12px; text-decoration: none; }
+.store-detail-foot .back-link svg { width: 15px; height: 15px; }
 .events-hero { position: relative; min-height: 680px; display: flex; align-items: center; overflow: hidden; background: var(--navy); color: var(--white); }
 .events-hero-copy { position: relative; z-index: 1; padding-top: 50px; }
 .events-hero h1 { max-width: 800px; }

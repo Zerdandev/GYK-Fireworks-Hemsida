@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { stores } from '../../data/stores'
-import { SectionEyebrow } from '../ui/SitePrimitives'
+import { ArrowIcon, SectionEyebrow } from '../ui/SitePrimitives'
 
 const contactEmail = import.meta.env.VITE_CONTACT_EMAIL?.trim() || 'gykfastigheter@gmail.com'
 
@@ -99,7 +99,7 @@ export function ContactForm({ initialType = 'Allmän fråga' }) {
       </div>
       <div className="form-actions">
         <button className="button button-gold" type="submit" disabled={isSubmitting}>
-          {isSubmitting ? 'Skickar…' : 'Skicka förfrågan'} <span aria-hidden="true">↗</span>
+          {isSubmitting ? 'Skickar…' : 'Skicka förfrågan'} <span aria-hidden="true"><ArrowIcon /></span>
         </button>
         <span className="form-privacy">Genom att skicka godkänner du att vi hanterar dina uppgifter för att besvara din fråga.</span>
       </div>
