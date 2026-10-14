@@ -10,7 +10,7 @@ export const stores = [
   { slug: 'orebro-motonet', name: 'Motonet Parkering', city: 'Örebro', address: 'Säljarevägen 5 C', coordinates: [59.2196912, 15.1397459] },
   { slug: 'orebro-lillans-gatukok', name: "Lillåns Gatukök", city: 'Örebro', address: 'Klockarängsvägen 1', coordinates: [59.3163, 15.2304] },
   { slug: 'orebro-sorbybacken', name: 'Sörbybacken', city: 'Örebro', address: 'Sörbyvägen 4', coordinates: [59.2490765, 15.2305729], coordinatesApproximate: true },
-  { slug: 'karlstad', name: 'Karlstad', city: 'Karlstad', address: 'Ullebergsleden 10', coordinates: [59.3750447, 13.4397568] },
+  { slug: 'karlstad', name: 'Karlstad', city: 'Karlstad', address: 'Ullebergsleden 10', coordinates: [59.3750447, 13.4397568], vulcanUrl: 'https://vulcaneurope.se/aterforsaljare/gyk-karlstad/sortiment/' },
   { slug: 'vasteras-erikslund', name: 'Erikslund', city: 'Västerås', address: 'Hallsta Gårdsgata 13', coordinates: [59.61222, 16.4593194], coordinatesApproximate: true, vulcanUrl: 'https://vulcaneurope.se/aterforsaljare/gyk-vasteras/sortiment/' },
 ]
 
