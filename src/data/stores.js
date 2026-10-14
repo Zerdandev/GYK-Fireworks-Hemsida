@@ -11,7 +11,7 @@ export const stores = [
   { slug: 'orebro-lillans-gatukok', name: "Lillåns Gatukök", city: 'Örebro', address: 'Klockarängsvägen 1', coordinates: [59.3163, 15.2304] },
   { slug: 'orebro-sorbybacken', name: 'Sörbybacken', city: 'Örebro', address: 'Sörbyvägen 4', coordinates: [59.2490765, 15.2305729], coordinatesApproximate: true },
   { slug: 'karlstad', name: 'Karlstad', city: 'Karlstad', address: 'Ullebergsleden 10', coordinates: [59.3750447, 13.4397568] },
-  { slug: 'vasteras-erikslund', name: 'Erikslund', city: 'Västerås', address: 'Hallsta Gårdsgata 13', coordinates: [59.61222, 16.4593194], coordinatesApproximate: true },
+  { slug: 'vasteras-erikslund', name: 'Erikslund', city: 'Västerås', address: 'Hallsta Gårdsgata 13', coordinates: [59.61222, 16.4593194], coordinatesApproximate: true, vulcanUrl: 'https://vulcaneurope.se/aterforsaljare/gyk-vasteras/sortiment/' },
 ]
 
 export const cities = [
