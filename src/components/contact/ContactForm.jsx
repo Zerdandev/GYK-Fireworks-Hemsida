@@ -38,14 +38,22 @@ export function ContactForm({ initialType = 'Allmän fråga' }) {
     }
 
     try {
+      const controller = new AbortController()
+      const timeoutId = setTimeout(() => controller.abort(), 15000)
       setIsSubmitting(true)
       setNotice('')
 
-      const response = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(contactEmail)}`, {
-        method: 'POST',
-        headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      })
+      let response
+      try {
+        response = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(contactEmail)}`, {
+          method: 'POST',
+          headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+          signal: controller.signal,
+        })
+      } finally {
+        clearTimeout(timeoutId)
+      }
 
       if (!response.ok) {
         throw new Error('Nätverksfel')
@@ -54,8 +62,12 @@ export function ContactForm({ initialType = 'Allmän fråga' }) {
       form.reset()
       setType(initialType)
       setNotice('Tack! Ditt meddelande har skickats och kommer nu till din e-post.')
-    } catch {
-      setNotice('Något gick fel när formuläret skulle skickas. Kontrollera e-postadressen eller försök igen lite senare.')
+    } catch (error) {
+      setNotice(
+        error.name === 'AbortError'
+          ? 'Det tar längre tid än väntat att skicka meddelandet. Kontrollera din e-post innan du försöker igen.'
+          : 'Något gick fel när formuläret skulle skickas. Kontrollera e-postadressen eller försök igen lite senare.',
+      )
     } finally {
       setIsSubmitting(false)
     }
