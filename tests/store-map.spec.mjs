@@ -23,7 +23,7 @@ test('all stores are represented, clusters expand and marker links work', async 
   await page.locator('.store-map-pin').focus()
   await page.keyboard.press('Enter')
   await expect(page.locator('.store-map-popup')).toContainText('Ullebergsleden 10')
-  await expect(page.getByRole('link', { name: 'Se butiken →' })).toHaveAttribute('href', '/butiker/karlstad')
+  await expect(page.getByRole('link', { name: 'Se butiken', exact: true })).toHaveAttribute('href', '/butiker/karlstad')
   await expect(page.getByRole('link', { name: /Vägbeskrivning till Karlstad/ })).toHaveAttribute('href', /destination=Ullebergsleden/)
   expect(errors).toEqual([])
 })
