@@ -28,6 +28,29 @@ test('all stores are represented, clusters expand and marker links work', async 
   expect(errors).toEqual([])
 })
 
+test('each store detail links to its assigned Vulcan assortment', async ({ page }) => {
+  const vulcanLinks = [
+    ['orebro-handlarn', 'gyk-myrmalm'],
+    ['katrineholm', 'gyk-katrineholm'],
+    ['kristinehamn', 'gyk-kristinehamn'],
+    ['linkoping-tornby', 'gyk-vansbro'],
+    ['orebro-netonnet', 'gyk-netonnet'],
+    ['kumla', 'gyk-kumla'],
+    ['norrkoping-ingelsta', 'gyk-ingelstad'],
+    ['orebro-motonet', 'gyk-marieberg'],
+    ['orebro-lillans-gatukok', 'gyk-lillan-gatukok'],
+    ['orebro-sorbybacken', 'gyk-sorbacken'],
+    ['karlstad', 'gyk-karlstad'],
+    ['vasteras-erikslund', 'gyk-vasteras'],
+  ]
+
+  for (const [storeSlug, vulcanSlug] of vulcanLinks) {
+    await page.goto(`/butiker/${storeSlug}`)
+    await expect(page.locator('.store-order a'))
+      .toHaveAttribute('href', `https://vulcaneurope.se/aterforsaljare/${vulcanSlug}/sortiment/`)
+  }
+})
+
 test('search and city filters stay in sync with pins and recover from empty results', async ({ page }) => {
   await page.goto('/butiker')
   await page.getByLabel('Sök butik').fill('åbyvägen')
